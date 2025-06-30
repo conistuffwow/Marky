@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		F3F705652E12FFB0007FE228 /* MarkyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705642E12FFB0007FE228 /* MarkyApp.swift */; };
-		F3F705672E12FFB0007FE228 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705662E12FFB0007FE228 /* ContentView.swift */; };
 		F3F705692E12FFB5007FE228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F705682E12FFB5007FE228 /* Assets.xcassets */; };
 		F3F7056C2E12FFB5007FE228 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F7056B2E12FFB5007FE228 /* Preview Assets.xcassets */; };
 		F3F705772E12FFB5007FE228 /* MarkyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705762E12FFB5007FE228 /* MarkyTests.swift */; };
 		F3F705812E12FFB5007FE228 /* MarkyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705802E12FFB5007FE228 /* MarkyUITests.swift */; };
 		F3F705832E12FFB5007FE228 /* MarkyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705822E12FFB5007FE228 /* MarkyUITestsLaunchTests.swift */; };
+		F3F705902E12FFF2007FE228 /* MainMarky.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F7058F2E12FFF2007FE228 /* MainMarky.swift */; };
+		F3F705922E130381007FE228 /* PreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705912E130381007FE228 /* PreView.swift */; };
+		F3F705942E1304BE007FE228 /* MarkyMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705932E1304BE007FE228 /* MarkyMarkdown.swift */; };
+		F3F705962E13088F007FE228 /* MarkdownEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705952E13088F007FE228 /* MarkdownEnv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		F3F705612E12FFB0007FE228 /* Marky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F705642E12FFB0007FE228 /* MarkyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkyApp.swift; sourceTree = "<group>"; };
-		F3F705662E12FFB0007FE228 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F3F705682E12FFB5007FE228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3F7056B2E12FFB5007FE228 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3F7056D2E12FFB5007FE228 /* Marky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Marky.entitlements; sourceTree = "<group>"; };
@@ -45,6 +47,10 @@
 		F3F7057C2E12FFB5007FE228 /* MarkyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F705802E12FFB5007FE228 /* MarkyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkyUITests.swift; sourceTree = "<group>"; };
 		F3F705822E12FFB5007FE228 /* MarkyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F3F7058F2E12FFF2007FE228 /* MainMarky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMarky.swift; sourceTree = "<group>"; };
+		F3F705912E130381007FE228 /* PreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreView.swift; sourceTree = "<group>"; };
+		F3F705932E1304BE007FE228 /* MarkyMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkyMarkdown.swift; sourceTree = "<group>"; };
+		F3F705952E13088F007FE228 /* MarkdownEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownEnv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,11 @@
 		F3F705632E12FFB0007FE228 /* Marky */ = {
 			isa = PBXGroup;
 			children = (
+				F3F7058F2E12FFF2007FE228 /* MainMarky.swift */,
+				F3F705932E1304BE007FE228 /* MarkyMarkdown.swift */,
+				F3F705912E130381007FE228 /* PreView.swift */,
+				F3F705952E13088F007FE228 /* MarkdownEnv.swift */,
 				F3F705642E12FFB0007FE228 /* MarkyApp.swift */,
-				F3F705662E12FFB0007FE228 /* ContentView.swift */,
 				F3F705682E12FFB5007FE228 /* Assets.xcassets */,
 				F3F7056D2E12FFB5007FE228 /* Marky.entitlements */,
 				F3F7056A2E12FFB5007FE228 /* Preview Content */,
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F705672E12FFB0007FE228 /* ContentView.swift in Sources */,
 				F3F705652E12FFB0007FE228 /* MarkyApp.swift in Sources */,
+				F3F705942E1304BE007FE228 /* MarkyMarkdown.swift in Sources */,
+				F3F705922E130381007FE228 /* PreView.swift in Sources */,
+				F3F705962E13088F007FE228 /* MarkdownEnv.swift in Sources */,
+				F3F705902E12FFF2007FE228 /* MainMarky.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
