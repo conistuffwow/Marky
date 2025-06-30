@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Down
 
 enum MarkdownElement {
     case heading(level: Int, text: String)
@@ -15,27 +16,44 @@ enum MarkdownElement {
 func parseMarkdown(_ input: String) -> [MarkdownElement] {
     let lines = input.split(separator: "\n", omittingEmptySubsequences: false)
     var elements: [MarkdownElement] = []
+    var paragraphBuffer: [String] = []
+    
+    func flushParagraphBuffer() {
+        if !paragraphBuffer.isEmpty {
+            let combined = paragraphBuffer.joined(separator: " ")
+            elements.append(.paragraph(combined))
+            paragraphBuffer.removeAll()
+        }
+    }
     
     for line in lines {
-        if line.hasPrefix("# ") {
-            let level = line.prefix(while: {$0 == "#"}).count
+        let trimmed = line.trimmingCharacters(in: .whitespaces)
+        
+        if trimmed.isEmpty {
+            flushParagraphBuffer()
+            continue
+        }
+        
+        if line.hasPrefix("#") {
+            // flush paragraphs so we dont fucking explode!!!
+            flushParagraphBuffer()
+            
+            let rawLevel = line.prefix(while: { $0 == "#" }).count
+            let level = min(rawLevel, 6)
             let text = line.drop(while: { $0 == "#" }).trimmingCharacters(in: .whitespaces)
             elements.append(.heading(level: level, text: text))
-            
-        } else if !line.trimmingCharacters(in: .whitespaces).isEmpty {
-            elements.append(.paragraph(String(line)))
+        } else {
+            paragraphBuffer.append(trimmed)
         }
     }
     return elements
 }
 
-func renderHTML(from elements: [MarkdownElement]) -> String {
-    elements.map { element in
-        switch element {
-        case .heading(let level, let text):
-            return "<h\(level)>\(text)</h\(level)>"
-        case .paragraph(let text):
-            return "<p>\(text)</p>"
-        }
-    }.joined(separator: "\n")
+func renderHTML(from markdown: String) -> String {
+    do {
+        return try Down(markdownString: markdown).toHTML()
+    } catch {
+        return "<p><strong>Render error:</strong> \(error.localizedDescription)</p>"
+    }
 }
+

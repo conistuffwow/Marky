@@ -17,6 +17,10 @@
 		F3F705922E130381007FE228 /* PreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705912E130381007FE228 /* PreView.swift */; };
 		F3F705942E1304BE007FE228 /* MarkyMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705932E1304BE007FE228 /* MarkyMarkdown.swift */; };
 		F3F705962E13088F007FE228 /* MarkdownEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705952E13088F007FE228 /* MarkdownEnv.swift */; };
+		F3F705982E130D64007FE228 /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705972E130D64007FE228 /* HTMLView.swift */; };
+		F3F7059B2E130DC8007FE228 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F7059A2E130DC8007FE228 /* WebKit.framework */; };
+		F3F7059E2E1316FF007FE228 /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = F3F7059D2E1316FF007FE228 /* Down */; };
+		F3F705A02E1320BE007FE228 /* Heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F7059F2E1320BE007FE228 /* Heading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,9 @@
 		F3F705912E130381007FE228 /* PreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreView.swift; sourceTree = "<group>"; };
 		F3F705932E1304BE007FE228 /* MarkyMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkyMarkdown.swift; sourceTree = "<group>"; };
 		F3F705952E13088F007FE228 /* MarkdownEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownEnv.swift; sourceTree = "<group>"; };
+		F3F705972E130D64007FE228 /* HTMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
+		F3F7059A2E130DC8007FE228 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		F3F7059F2E1320BE007FE228 /* Heading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F7059E2E1316FF007FE228 /* Down in Frameworks */,
+				F3F7059B2E130DC8007FE228 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +94,7 @@
 				F3F705752E12FFB5007FE228 /* MarkyTests */,
 				F3F7057F2E12FFB5007FE228 /* MarkyUITests */,
 				F3F705622E12FFB0007FE228 /* Products */,
+				F3F705992E130DC8007FE228 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				F3F7058F2E12FFF2007FE228 /* MainMarky.swift */,
+				F3F7059F2E1320BE007FE228 /* Heading.swift */,
 				F3F705932E1304BE007FE228 /* MarkyMarkdown.swift */,
 				F3F705912E130381007FE228 /* PreView.swift */,
 				F3F705952E13088F007FE228 /* MarkdownEnv.swift */,
@@ -109,6 +120,7 @@
 				F3F705682E12FFB5007FE228 /* Assets.xcassets */,
 				F3F7056D2E12FFB5007FE228 /* Marky.entitlements */,
 				F3F7056A2E12FFB5007FE228 /* Preview Content */,
+				F3F705972E130D64007FE228 /* HTMLView.swift */,
 			);
 			path = Marky;
 			sourceTree = "<group>";
@@ -138,6 +150,14 @@
 			path = MarkyUITests;
 			sourceTree = "<group>";
 		};
+		F3F705992E130DC8007FE228 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3F7059A2E130DC8007FE228 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,6 +174,9 @@
 			dependencies = (
 			);
 			name = Marky;
+			packageProductDependencies = (
+				F3F7059D2E1316FF007FE228 /* Down */,
+			);
 			productName = Marky;
 			productReference = F3F705612E12FFB0007FE228 /* Marky.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +249,9 @@
 				Base,
 			);
 			mainGroup = F3F705582E12FFAF007FE228;
+			packageReferences = (
+				F3F7059C2E1316FF007FE228 /* XCRemoteSwiftPackageReference "down" */,
+			);
 			productRefGroup = F3F705622E12FFB0007FE228 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,9 +296,11 @@
 			files = (
 				F3F705652E12FFB0007FE228 /* MarkyApp.swift in Sources */,
 				F3F705942E1304BE007FE228 /* MarkyMarkdown.swift in Sources */,
+				F3F705982E130D64007FE228 /* HTMLView.swift in Sources */,
 				F3F705922E130381007FE228 /* PreView.swift in Sources */,
 				F3F705962E13088F007FE228 /* MarkdownEnv.swift in Sources */,
 				F3F705902E12FFF2007FE228 /* MainMarky.swift in Sources */,
+				F3F705A02E1320BE007FE228 /* Heading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +467,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Marky/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Marky;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,6 +493,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Marky/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Marky;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,6 +615,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3F7059C2E1316FF007FE228 /* XCRemoteSwiftPackageReference "down" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iwasrobbed/down";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3F7059D2E1316FF007FE228 /* Down */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3F7059C2E1316FF007FE228 /* XCRemoteSwiftPackageReference "down" */;
+			productName = Down;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3F705592E12FFAF007FE228 /* Project object */;
 }
