@@ -15,6 +15,10 @@ struct MarkyView: View {
     
     @State private var headings: [Heading] = []
     @State private var selectedHeading: Heading?
+    @State private var tabs: [MarkdownTab] = [
+        .init(name: "Untitled", text: "# New File", url: nil)
+    ]
+    @State private var selectedTab: MarkdownTab?
     
     @Binding var isSaving: Bool
     @Binding var isLoading: Bool
@@ -52,20 +56,15 @@ struct MarkyView: View {
             if showPreview {
                 PreviewView(markdownText: defaultText)
             } else {
-                TextEditor(text: $defaultText)
-                    .font(.system(.body, design: .monospaced))
-                    .padding(8)
-                    .background(Color(NSColor.textBackgroundColor))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .onChange(of: defaultText) { newValue in
-                        headings = extractHeadings(from: newValue)
-                        if !headings.contains(where: {$0.id == selectedHeading?.id }) {
-                            selectedHeading = nil
-                        }
+                TabView(selection: $selectedTab) {
+                    ForEach(tabs, id: \.id) { tab in
+                        EditorView(tab: binding(for: tab))
+                            .tabItem {
+                                Text(tab.name)
+                            }
+                            .tag(tab)
                     }
-                    .onAppear {
-                        headings = extractHeadings(from: defaultText)
-                    }
+                }
             }
         } detail: {
             PreviewView(markdownText: defaultText)
@@ -89,9 +88,45 @@ struct MarkyView: View {
                 }) {
                     Image(systemName: "chevron.left.slash.chevron.right")
                 }
+                
+                Button(action: {
+                    insertMarkdownTag(">")
+                }) {
+                    Image(systemName: "text.quote")
+                }
+                Button(action: {
+                    insertMarkdownTag("[text](url)")
+                }) {
+                    Image(systemName: "link")
+                }
+                Button(action: {
+                    insertMarkdownTag("![alt](image.png)")
+                }) {
+                    Image(systemName: "photo")
+                }
+                Button(action: {
+                    insertMarkdownTag("# ")
+                }) {
+                    Image(systemName: "number")
+                }
+                Button(action: {
+                    insertMarkdownTag("- ")
+                }) {
+                    Image(systemName: "list.bullet")
+                }
+                Button(action: {
+                    insertMarkdownTag("- [ ] ")
+                }) {
+                    Image(systemName: "checkmark.square")
+                }
             }
             
         }
+        .onAppear(
+            if selectedTab == nil {
+                selectedTab = tabs.first
+            }
+            )
         
         .fileImporter(isPresented: $isLoading, allowedContentTypes: [.markdown], allowsMultipleSelection: false) { result in
             do {
@@ -129,5 +164,12 @@ struct MarkyView: View {
     
     func scrollToHeading(_ heading: Heading) {
         //todo
+    }
+    
+    func binding(for tab: MarkdownTab) -> Binding<MarkdownTab> {
+        guard let index = tabs.firstIndex(of: tab) else {
+            fatalError("Tabnotfound")
+        }
+        return $tabs[index]
     }
 }

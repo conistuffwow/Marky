@@ -24,6 +24,8 @@
 		F3F705A22E1331D5007FE228 /* MBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A12E1331D5007FE228 /* MBar.swift */; };
 		F3F705A42E133472007FE228 /* MDDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A32E133472007FE228 /* MDDoc.swift */; };
 		F3F705A62E1336EC007FE228 /* MarkdownType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A52E1336EC007FE228 /* MarkdownType.swift */; };
+		F3F705A82E1349BE007FE228 /* TabStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A72E1349BE007FE228 /* TabStruct.swift */; };
+		F3F705AA2E134B69007FE228 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A92E134B69007FE228 /* EditorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		F3F705A12E1331D5007FE228 /* MBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBar.swift; sourceTree = "<group>"; };
 		F3F705A32E133472007FE228 /* MDDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDDoc.swift; sourceTree = "<group>"; };
 		F3F705A52E1336EC007FE228 /* MarkdownType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownType.swift; sourceTree = "<group>"; };
+		F3F705A72E1349BE007FE228 /* TabStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabStruct.swift; sourceTree = "<group>"; };
+		F3F705A92E134B69007FE228 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				F3F7058F2E12FFF2007FE228 /* MainMarky.swift */,
+				F3F705A92E134B69007FE228 /* EditorView.swift */,
 				F3F705A32E133472007FE228 /* MDDoc.swift */,
+				F3F705A72E1349BE007FE228 /* TabStruct.swift */,
 				F3F705A52E1336EC007FE228 /* MarkdownType.swift */,
 				F3F705A12E1331D5007FE228 /* MBar.swift */,
 				F3F7059F2E1320BE007FE228 /* Heading.swift */,
@@ -312,7 +318,9 @@
 				F3F705A62E1336EC007FE228 /* MarkdownType.swift in Sources */,
 				F3F705902E12FFF2007FE228 /* MainMarky.swift in Sources */,
 				F3F705A02E1320BE007FE228 /* Heading.swift in Sources */,
+				F3F705AA2E134B69007FE228 /* EditorView.swift in Sources */,
 				F3F705A22E1331D5007FE228 /* MBar.swift in Sources */,
+				F3F705A82E1349BE007FE228 /* TabStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
