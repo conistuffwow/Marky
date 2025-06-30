@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct MarkyApp: App {
+    @State private var isSaving = false
+    @State private var isLoading = false
     var body: some Scene {
         WindowGroup {
-            MarkyView()
+            MarkyView(isSaving: $isSaving, isLoading: $isLoading)
+        }
+        .commands {
+            MarkyCmds(isSaving: $isSaving, isLoading: $isLoading)
         }
     }
 }

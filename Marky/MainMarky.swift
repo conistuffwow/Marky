@@ -9,11 +9,16 @@ import Foundation
 import SwiftUI
 
 struct MarkyView: View {
+
     @State private var defaultText: String = "# Untitled"
     @State private var showPreview: Bool = false
     
     @State private var headings: [Heading] = []
     @State private var selectedHeading: Heading?
+    
+    @Binding var isSaving: Bool
+    @Binding var isLoading: Bool
+    @State private var saveURL: URL? = nil
     
     var body: some View {
         NavigationSplitView {
@@ -84,6 +89,26 @@ struct MarkyView: View {
                 }) {
                     Image(systemName: "chevron.left.slash.chevron.right")
                 }
+            }
+            
+        }
+        
+        .fileImporter(isPresented: $isLoading, allowedContentTypes: [.markdown], allowsMultipleSelection: false) { result in
+            do {
+                guard let selectedFile = try result.get().first else { return }
+                let loaded = try String(contentsOf: selectedFile)
+                defaultText = loaded
+            } catch {
+                print("Failed to load file.")
+            }
+        }
+        
+        .fileExporter(isPresented: $isSaving, document: MarkdownDocument(text: defaultText), contentType: .markdown, defaultFilename: "untitled") { result in
+            switch result {
+            case .success(let url):
+                saveURL = url
+            case .failure(let error):
+                print("Failed to save.")
             }
             
         }
