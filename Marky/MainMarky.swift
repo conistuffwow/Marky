@@ -15,10 +15,6 @@ struct MarkyView: View {
     
     @State private var headings: [Heading] = []
     @State private var selectedHeading: Heading?
-    @State private var tabs: [MarkdownTab] = [
-        .init(name: "Untitled", text: "# New File", url: nil)
-    ]
-    @State private var selectedTab: MarkdownTab?
     
     @Binding var isSaving: Bool
     @Binding var isLoading: Bool
@@ -56,15 +52,7 @@ struct MarkyView: View {
             if showPreview {
                 PreviewView(markdownText: defaultText)
             } else {
-                TabView(selection: $selectedTab) {
-                    ForEach(tabs, id: \.id) { tab in
-                        EditorView(tab: binding(for: tab))
-                            .tabItem {
-                                Text(tab.name)
-                            }
-                            .tag(tab)
-                    }
-                }
+                EditorView()
             }
         } detail: {
             PreviewView(markdownText: defaultText)
@@ -122,11 +110,7 @@ struct MarkyView: View {
             }
             
         }
-        .onAppear(
-            if selectedTab == nil {
-                selectedTab = tabs.first
-            }
-            )
+        
         
         .fileImporter(isPresented: $isLoading, allowedContentTypes: [.markdown], allowsMultipleSelection: false) { result in
             do {
@@ -166,10 +150,4 @@ struct MarkyView: View {
         //todo
     }
     
-    func binding(for tab: MarkdownTab) -> Binding<MarkdownTab> {
-        guard let index = tabs.firstIndex(of: tab) else {
-            fatalError("Tabnotfound")
-        }
-        return $tabs[index]
-    }
 }

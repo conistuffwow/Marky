@@ -9,14 +9,13 @@ import Foundation
 import SwiftUI
 
 struct EditorView: View {
-    @Binding var tab: MarkdownTab
     
     var body: some View {
         HStack {
-            TextEditor(text: $tab.text)
+            TextEditor(text: "# Untitled")
                 .font(.system(.body, design: .monospaced))
                 .padding()
         }
-        .navigationTitle(tab.name)
+
     }
 }

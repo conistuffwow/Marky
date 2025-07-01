@@ -20,7 +20,7 @@ struct MarkyApp: App {
             MarkyView(isSaving: $isSaving, isLoading: $isLoading)
         }
         .commands {
-            MarkyCmds(isSaving: $isSaving, isLoading: $isLoading, tabs: $tabs, selectedTab: $selectedTab)
+            MarkyCmds(isSaving: $isSaving, isLoading: $isLoading)
         }
     }
 }
