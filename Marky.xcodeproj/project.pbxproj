@@ -21,11 +21,14 @@
 		F3F7059B2E130DC8007FE228 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F7059A2E130DC8007FE228 /* WebKit.framework */; };
 		F3F7059E2E1316FF007FE228 /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = F3F7059D2E1316FF007FE228 /* Down */; };
 		F3F705A02E1320BE007FE228 /* Heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F7059F2E1320BE007FE228 /* Heading.swift */; };
+<<<<<<< HEAD
 		F3F705A22E1331D5007FE228 /* MBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A12E1331D5007FE228 /* MBar.swift */; };
 		F3F705A42E133472007FE228 /* MDDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A32E133472007FE228 /* MDDoc.swift */; };
 		F3F705A62E1336EC007FE228 /* MarkdownType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A52E1336EC007FE228 /* MarkdownType.swift */; };
 		F3F705A82E1349BE007FE228 /* TabStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A72E1349BE007FE228 /* TabStruct.swift */; };
 		F3F705AA2E134B69007FE228 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F705A92E134B69007FE228 /* EditorView.swift */; };
+=======
+>>>>>>> parent of a9a2832 (MD saving and loading)
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,11 +66,14 @@
 		F3F705972E130D64007FE228 /* HTMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
 		F3F7059A2E130DC8007FE228 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F3F7059F2E1320BE007FE228 /* Heading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heading.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F3F705A12E1331D5007FE228 /* MBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBar.swift; sourceTree = "<group>"; };
 		F3F705A32E133472007FE228 /* MDDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDDoc.swift; sourceTree = "<group>"; };
 		F3F705A52E1336EC007FE228 /* MarkdownType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownType.swift; sourceTree = "<group>"; };
 		F3F705A72E1349BE007FE228 /* TabStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabStruct.swift; sourceTree = "<group>"; };
 		F3F705A92E134B69007FE228 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> parent of a9a2832 (MD saving and loading)
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,11 +128,14 @@
 			isa = PBXGroup;
 			children = (
 				F3F7058F2E12FFF2007FE228 /* MainMarky.swift */,
+<<<<<<< HEAD
 				F3F705A92E134B69007FE228 /* EditorView.swift */,
 				F3F705A32E133472007FE228 /* MDDoc.swift */,
 				F3F705A72E1349BE007FE228 /* TabStruct.swift */,
 				F3F705A52E1336EC007FE228 /* MarkdownType.swift */,
 				F3F705A12E1331D5007FE228 /* MBar.swift */,
+=======
+>>>>>>> parent of a9a2832 (MD saving and loading)
 				F3F7059F2E1320BE007FE228 /* Heading.swift */,
 				F3F705932E1304BE007FE228 /* MarkyMarkdown.swift */,
 				F3F705912E130381007FE228 /* PreView.swift */,
@@ -312,15 +321,16 @@
 				F3F705652E12FFB0007FE228 /* MarkyApp.swift in Sources */,
 				F3F705942E1304BE007FE228 /* MarkyMarkdown.swift in Sources */,
 				F3F705982E130D64007FE228 /* HTMLView.swift in Sources */,
-				F3F705A42E133472007FE228 /* MDDoc.swift in Sources */,
 				F3F705922E130381007FE228 /* PreView.swift in Sources */,
 				F3F705962E13088F007FE228 /* MarkdownEnv.swift in Sources */,
-				F3F705A62E1336EC007FE228 /* MarkdownType.swift in Sources */,
 				F3F705902E12FFF2007FE228 /* MainMarky.swift in Sources */,
 				F3F705A02E1320BE007FE228 /* Heading.swift in Sources */,
+<<<<<<< HEAD
 				F3F705AA2E134B69007FE228 /* EditorView.swift in Sources */,
 				F3F705A22E1331D5007FE228 /* MBar.swift in Sources */,
 				F3F705A82E1349BE007FE228 /* TabStruct.swift in Sources */,
+=======
+>>>>>>> parent of a9a2832 (MD saving and loading)
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,8 +503,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.conistuffwow.Marky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -520,8 +529,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.conistuffwow.Marky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -9,16 +9,11 @@ import Foundation
 import SwiftUI
 
 struct MarkyView: View {
-
     @State private var defaultText: String = "# Untitled"
     @State private var showPreview: Bool = false
     
     @State private var headings: [Heading] = []
     @State private var selectedHeading: Heading?
-    
-    @Binding var isSaving: Bool
-    @Binding var isLoading: Bool
-    @State private var saveURL: URL? = nil
     
     var body: some View {
         NavigationSplitView {
@@ -110,6 +105,7 @@ struct MarkyView: View {
             }
             
         }
+<<<<<<< HEAD
         
         
         .fileImporter(isPresented: $isLoading, allowedContentTypes: [.markdown], allowsMultipleSelection: false) { result in
@@ -131,6 +127,8 @@ struct MarkyView: View {
             }
             
         }
+=======
+>>>>>>> parent of a9a2832 (MD saving and loading)
     }
     
     func togglePreview() {
